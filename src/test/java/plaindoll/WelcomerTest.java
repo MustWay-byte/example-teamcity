@@ -32,4 +32,11 @@ public class WelcomerTest {
 	public void welcomerSaysSomething(){
 		assertThat(welcomer.saySome(), containsString("something"));
 	}
+        @Test
+        public void testGetHunterMessage() {
+            Welcomer welcomer = new Welcomer();
+            String message = welcomer.getHunterMessage();
+            assertTrue("The message should contain 'hunter'",
+                       message.toLowerCase().contains("hunter"));
+        }
 }
